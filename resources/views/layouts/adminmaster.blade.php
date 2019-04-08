@@ -118,7 +118,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="{{route('manage')}}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>General Elements</p>
                 </a>
@@ -178,8 +178,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-      <router-view></router-view>
-      <vue-progress-bar></vue-progress-bar>
+   @yield('content')
       </div><!-- /.container-fluid -->
   </div>
   </div>
@@ -199,11 +198,8 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-@auth
-<script>
-    window.user = @json(auth()->user())
-</script>
-@endauth
+
+
 <script src="/js/app.js"></script>
 </body>
 </html>
